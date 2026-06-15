@@ -8,6 +8,11 @@ import activitiesRouter from './routes/activities';
 import leaderboardRouter from './routes/leaderboard';
 import workoutsRouter from './routes/workouts';
 
+/**
+ * OctoFit Tracker Backend API
+ * Express server with Codespaces and localhost support
+ */
+
 dotenv.config();
 
 const app = express();

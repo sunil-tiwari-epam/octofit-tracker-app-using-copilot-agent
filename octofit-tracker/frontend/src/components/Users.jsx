@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 // VITE_CODESPACE_NAME must be defined in .env.local when running in Codespaces
 // Example: VITE_CODESPACE_NAME=your-codespace-name
 const codespaceName = import.meta.env.VITE_CODESPACE_NAME
-const API_BASE = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev`
-  : 'http://localhost:8000'
+const API_URL = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/users`
+  : 'http://localhost:8000/api/users'
 
 function Users() {
   const [users, setUsers] = useState([])
@@ -13,7 +13,7 @@ function Users() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/users/`)
+    fetch(`${API_URL}/`)
       .then((res) => res.json())
       .then((data) => {
         // Handle both array and paginated responses
